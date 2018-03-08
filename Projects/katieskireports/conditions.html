@@ -1,0 +1,60 @@
+<DOCTYPE html>
+<html>
+    <head>
+        
+    <div class="topnav" id="myTopnav">
+      <a href="index.html">Home</a>
+      <a href="webcams.html">Webcams</a>
+      <a href="conditions.html">Conditions</a>
+      <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+    </div>
+    
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
+        
+        <link href="stylesheet.css" rel="stylesheet" type="text/css"> 
+        <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Josefin+Slab" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    
+    <body>
+    <h1>Weather and Conditions</h1>
+        
+    <h2>Bogus Basin</h2>
+        <iframe class="forecast_embed" frameborder="0" height="245" width="100%" src="//forecast.io/embed/#lat=43.764057&lon=-116.102617&name= "></iframe>
+        <a class="link" href="https://forecast.weather.gov/MapClick.php?lat=43.74&lon=-116.12#.Wp1a501Sw8o">Link to NOAA forecast</a>
+
+    <h2>Brundage</h2>
+        <iframe class="forecast_embed" frameborder="0" height="245" width="100%" src="//forecast.io/embed/#lat=45.005400&lon=-116.154412&name= "></iframe>
+        <a class="link" href="https://forecast.weather.gov/MapClick.php?lat=45.00614333887516&lon=-116.1416244506836#.Wp1cPE1Sw8o">Link to NOAA forecast</a>
+
+    <h2>Grand Targhee</h2>
+        <iframe class="forecast_embed" frameborder="0" height="245" width="100%" src="//forecast.io/embed/#lat=43.787113&lon=-110.959296&name= "></iframe>
+        <a class="link" href="https://forecast.weather.gov/MapClick.php?lat=43.80&lon=-110.95&site=riw&smap=1&marine=0&unit=0&lg=en#.Wp1crk1Sw8o">Link to NOAA forecast</a>
+
+    <h2>Mt Bachelor</h2>
+    <iframe class="forecast_embed" frameborder="0" height="245" width="100%" src="//forecast.io/embed/#lat=43.98287&lon=-121.58095&name= "></iframe>
+    <a class="link" href="https://forecast.weather.gov/MapClick.php?lat=43.99&lon=-121.68#.WqAMiE1Sw8o">Link to NOAA forecast</a>
+
+    <h2>Schweitzer</h2>
+        <iframe class="forecast_embed" frameborder="0" height="245" width="100%" src="//forecast.io/embed/#lat=48.366966&lon=-116.622669&name= "></iframe>
+        <a class="link" href="https://forecast.weather.gov/MapClick.php?lat=48.379969748170524&lon=-116.63386344909668#.Wp1dHE1Sw8o">Link to NOAA forecast</a>
+
+    <h2>Soldier Mountain</h2>
+        <iframe class="forecast_embed" frameborder="0" height="245" width="100%" src="//forecast.io/embed/#lat=43.485512&lon=-114.829380&name= "></iframe>
+        <a class="link" href="https://forecast.weather.gov/MapClick.php?textField1=43.538231&textField2=-115.045349&e=1#.Wp1dhE1Sw8o">Link to NOAA forecast</a>
+
+    <h2>Tamarack</h2>
+        <iframe class="forecast_embed" frameborder="0" height="245" width="100%" src="//forecast.io/embed/#lat=44.668081&lon=-116.11756990000003&name= "></iframe>
+        <a class="link" href="https://forecast.weather.gov/MapClick.php?unit=0&lg=english&FcstType=text&lat=44.69&lon=-116.15#.Wp1dm01Sw8o">Link to NOAA forecast</a>
+        
+    </body>
+    </html>

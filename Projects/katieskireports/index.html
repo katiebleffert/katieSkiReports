@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html xmlns="">
+<!--
+  * Please see the included README.md file for license terms and conditions.
+  -->
+<head>
+    <title>Katie's Ski Reports</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=no">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+
+    <style>
+        /* following two viewport lines are equivalent to meta viewport statement above, and is needed for Windows */
+        /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html and http://dev.w3.org/csswg/css-device-adapt/ */
+        @-ms-viewport { width: 100vw ; min-zoom: 100% ; zoom: 100% ; }          @viewport { width: 100vw ; min-zoom: 100% zoom: 100% ; }
+        @-ms-viewport { user-zoom: fixed ; min-zoom: 100% ; }                   @viewport { user-zoom: fixed ; min-zoom: 100% ; }
+        /*@-ms-viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }   @viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }*/
+    </style>
+
+    <!-- Uncomment the following scripts if you convert your "Standard HTML5" project into a "Cordova" project. -->
+    <!-- <script src="cordova.js"></script> -->          <!-- phantom library, needed for Cordova api calls, added during build -->
+    <!-- <script src="js/app.js"></script> -->           <!-- recommended location of your JavaScript code relative to other JS files -->
+    <!-- <script src="xdk/init-dev.js"></script> -->     <!-- normalizes device and document ready events, see README for details -->
+    
+    <div class="topnav" id="myTopnav">
+      <a href="index.html">Home</a>
+      <a href="webcams.html">Webcams</a>
+      <a href="conditions.html">Conditions</a>
+      <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+    </div>
+ 
+        <link href="stylesheet.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Josefin+Slab" rel="stylesheet">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
+
+<body>
+
+<div id="Title">
+    <img src="images/IMG_3867.jpg" alt="pow" id="mainPic">
+</div>
+
+    <div id="map"></div>
+<script>
+
+    var map, infoWindow;
+    function initMap() {
+        var bogus = {lat: 43.76377, lng: -116.09685};
+        var targhee = {lat: 43.6, lng: -110.73333};
+        var sunValley= {lat: 43.5, lng: -114.3};
+        var tamarack= {lat: 44.89425, lng: -116.09978};
+        var bBowl = {lat: 45.81762, lng: -110.89814};
+        var schweitzer= {lat: 48.367, lng: -116.623};
+        var alta= {lat: 40.66, lng: -111.5149};
+
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: -34.397, lng: 150.644},
+            zoom: 6.5
+        });
+        var marker = new google.maps.Marker({
+            position: bogus,
+            map: map
+        });
+        var marker = new google.maps.Marker({
+            position: targhee,
+            map: map
+        });
+        var marker = new google.maps.Marker({
+            position: sunValley,
+            map: map
+        });
+        var marker = new google.maps.Marker({
+            position: tamarack,
+            map: map
+        });
+        var marker = new google.maps.Marker({
+            position: bBowl,
+            map: map
+        });
+        var marker = new google.maps.Marker({
+            position: schweitzer,
+            map: map
+        });
+        var marker = new google.maps.Marker({
+            position: alta,
+            map: map
+        });
+        infoWindow = new google.maps.InfoWindow;
+
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                var pos = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                };
+
+                infoWindow.setPosition(pos);
+                infoWindow.setContent('You are here');
+                infoWindow.open(map);
+                map.setCenter(pos);
+            }, function() {
+                handleLocationError(true, infoWindow, map.getCenter());
+            });
+        } else {
+            // Browser doesn't support Geolocation
+            handleLocationError(false, infoWindow, map.getCenter());
+        }
+    }
+
+    function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+            'Error: The Geolocation service failed.' :
+            'Error: Your browser doesn\'t support geolocation.');
+        infoWindow.open(map);
+    }
+</script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgoBJBKhESwkk5g9Rm6E8E-ORMyQsCMNc&callback=initMap">
+    </script>
+
+</body>
+    
+    
+</html>
